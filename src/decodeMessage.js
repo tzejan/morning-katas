@@ -5,7 +5,8 @@ Spaces are not encoded/decoded. For example: "gsrh nvhhztv" will be decoded as "
 */
 
 const decodeMessage = (string) => {
-
+    const lookup = "zyxwvutsrqponmlkjihgfedcba";
+    return string.split("").map(char => char === ' '? ' ' : lookup[char.charCodeAt() - 97]).join("");
 };
 
 module.exports = decodeMessage;
